@@ -9,7 +9,7 @@
       body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background: #111;
+        background: #000;
         color: white;
       }
 
@@ -22,6 +22,7 @@
 
       header h2 {
         margin: 0;
+        font-size: 28px;
       }
 
       nav {
@@ -70,9 +71,10 @@
         margin-left: 5px;
       }
 
+      /* HERO — FOTO TIDAK DIHAPUS */
       .hero {
-        height: 80vh;
-        background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") center/cover;
+        height: 90vh;
+        background: url("GANTI_DENGAN_FOTO_KAMU.jpg") center/cover no-repeat;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -96,7 +98,7 @@
         text-align: center;
       }
 
-      /* MOBILE */
+      /* RESPONSIVE */
       @media (max-width: 768px) {
         nav {
           flex-direction: column;
@@ -116,13 +118,13 @@
           display: flex;
         }
 
+        .hero h1 {
+          font-size: 28px;
+        }
+
         .lang-switch {
           position: static;
           margin-top: 10px;
-        }
-
-        .hero h1 {
-          font-size: 28px;
         }
       }
     </style>
@@ -156,25 +158,21 @@
 
     <section id="paket">
       <h2>Paket Tour</h2>
-      <p>Pilih paket terbaik untuk liburan Anda di Bali.</p>
     </section>
 
     <section id="pilihan">
       <h2>Pilihan Tour</h2>
-      <p>Berbagai destinasi menarik dan pengalaman tak terlupakan.</p>
     </section>
 
     <section id="tentang">
       <h2>Tentang Kami</h2>
-      <p>Kami adalah travel terpercaya yang siap membantu perjalanan Anda.</p>
     </section>
 
     <section id="kontak">
       <h2>Kontak</h2>
-      <p>Email: info@dupatravel.com</p>
     </section>
 
-    <footer>© 2026 Dupatravel. All rights reserved.</footer>
+    <footer>© 2026 Dupatravel</footer>
 
     <script>
       function toggleMenu() {
