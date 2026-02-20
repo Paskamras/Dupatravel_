@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <title>Dupatravel - Paket Tour Terbaik</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
 
     <style>
+      
       body {
         margin: 0;
         font-family: "Segoe UI", sans-serif;
@@ -329,7 +331,57 @@
       .lang-switch button:hover {
         background: #fff;
         color: #000;
-      }
+      }  
+      @media (max-width: 768px) {
+  /* Navbar jadi vertikal */
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .lang-switch {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  /* Hero lebih kecil */
+  .hero {
+    height: 75vh;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  /* Grid jadi 1 kolom */
+  .paket,
+  .pilihan-grid,
+  .tentang-box {
+    grid-template-columns: 1fr;
+  }
+
+  /* Kontak lebih lebar */
+  .kontak-box {
+    width: 90%;
+  }
+
+  /* Padding lebih kecil */
+  section {
+    padding: 50px 15px;
+  }
+}
+
     </style>
   </head>
   <body>
