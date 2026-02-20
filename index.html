@@ -2,689 +2,194 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
-    <title>Dupatravel - Paket Tour Terbaik</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dupatravel</title>
 
     <style>
-      
-      
       body {
         margin: 0;
-        font-family: "Segoe UI", sans-serif;
-        background: #f4f6f8;
-        color: #333;
+        font-family: Arial, sans-serif;
+        background: #111;
+        color: white;
       }
 
       header {
+        background: black;
+        padding: 20px;
+        text-align: center;
         position: relative;
+      }
+
+      header h2 {
+        margin: 0;
       }
 
       nav {
-        text-align: center;
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
       }
 
       nav a {
-        color: #fff;
-        margin: 0 15px;
-        text-decoration: none;
-        font-weight: 500;
-      }
-
-      .hero {
-        background:
-          linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-          url("Img/hero.jpg.webp") center/cover no-repeat;
-
-        height: 90vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: white;
-        position: relative;
-      }
-
-      .hero-content {
-        position: relative;
-        max-width: 700px;
-        padding: 20px;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-        margin-bottom: 10px;
-      }
-
-      .hero p {
-        font-size: 18px;
-        margin-bottom: 20px;
-      }
-
-      .btn {
-        padding: 12px 22px;
-        background: #0d6efd;
         color: white;
         text-decoration: none;
-        border-radius: 30px;
-        transition: 0.3s;
       }
 
-      .btn:hover {
-        background: #0b5ed7;
+      nav a:hover {
+        color: orange;
       }
 
-      section {
-        padding: 80px 20px;
-        max-width: 1100px;
-        margin: auto;
-      }
-
-      .paket {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-      }
-
-      .card {
-        background: white;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s;
-      }
-
-      .card:hover {
-        transform: translateY(-8px);
-      }
-
-      .card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-
-      .card-content {
-        padding: 20px;
-      }
-
-      footer {
-        background: #111;
-        color: #aaa;
-        text-align: center;
-        padding: 20px;
-      }
-
-      header {
-        position: sticky;
-        top: 0;
-        background: #111;
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
         color: white;
-        padding: 15px 0;
-        text-align: center;
-        z-index: 1000;
+        font-size: 28px;
+        cursor: pointer;
       }
 
-      section {
-        scroll-margin-top: 90px;
-      }
-
-      .kontak-wrapper {
-        display: flex;
-        justify-content: center;
-      }
-
-      .kontak-box {
-        background: white;
-        padding: 30px;
-        border-radius: 16px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        width: 300px;
-      }
-
-      .kontak-item {
-        width: 220px; /* biar seragam */
-        text-align: center;
-        padding: 14px 20px;
-        background: #0d6efd;
-        color: white;
-        text-decoration: none;
-        border-radius: 30px;
-        font-weight: 500;
-        transition: 0.3s;
-      }
-
-      .kontak-item:hover {
-        background: #084298;
-        transform: translateY(-3px);
-      }
-
-      .tentang-box {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* 2 kolom */
-        gap: 30px;
-        max-width: 900px;
-        margin: auto;
-      }
-
-      .tentang-col {
-        background: #fff;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-      }
-
-      .tentang-col h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-      }
-      #tentang h2 {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .tentang-col {
-        text-align: center;
-      }
-
-      /* RESPONSIVE */
-    @media (max-width: 768px) {
-
-  header {
-    padding: 15px;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav a {
-    padding: 8px 0;
-    font-size: 16px;
-  }
-
-  .hero {
-    height: 80vh;
-  }
-
-  .hero h1 {
-    font-size: 24px;
-  }
-}
-      #kontak {
-        max-width: 100%;
-        background: #f4f6f8;
-      }
-
-      #kontak h2 {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      .kontak-wrapper {
-        display: flex;
-        justify-content: center;
-      }
-
-      .kontak-box {
-        background: white;
-        padding: 30px;
-        border-radius: 16px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        width: 300px;
-      }
-      #pilihan h2 {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-
-      .menu-pilihan {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-        max-width: 900px;
-        margin: auto;
-      }
-
-      .menu-item {
-        background: white;
-        padding: 20px;
-        text-align: center;
-        border-radius: 14px;
-        text-decoration: none;
-        color: #333;
-        font-weight: 600;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        transition: 0.3s;
-      }
-
-      .menu-item:hover {
-        background: #0d6efd;
-        color: white;
-        transform: translateY(-6px);
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      #pilihan h2 {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-
-      .pilihan-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-        max-width: 1100px;
-        margin: auto;
-      }
-
-      .pilihan-card {
-        background: white;
-        border-radius: 14px;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        text-align: center;
-        transition: 0.3s;
-      }
-
-      .pilihan-card:hover {
-        transform: translateY(-8px);
-      }
-
-      .pilihan-card img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-      }
-
-      .pilihan-card h3 {
-        margin: 15px 0 8px;
-      }
-
-      .pilihan-card p {
-        padding: 0 20px;
-        font-size: 14px;
-        color: #555;
-      }
-
-      .pilihan-card .btn {
-        display: inline-block;
-        margin: 15px 0 20px;
-      }
-      .honeymoon {
-        grid-column: 1 / -1; /* ambil 1 baris penuh */
-        max-width: 350px;
-        margin: auto;
-      }
-      #paket h2 {
-        text-align: center;
-        margin-bottom: 40px;
-      }
-      #paket .card {
-        text-align: center;
-      }
       .lang-switch {
         position: absolute;
         top: 20px;
-        right: 30px;
+        right: 20px;
       }
 
       .lang-switch button {
-        background: transparent;
-        border: 1px solid #fff;
-        color: #fff;
+        background: none;
+        border: 1px solid white;
+        color: white;
         padding: 5px 10px;
-        margin-left: 5px;
         cursor: pointer;
-        border-radius: 4px;
+        margin-left: 5px;
       }
 
-      .lang-switch button:hover {
-        background: #fff;
-        color: #000;
-      }  
+      .hero {
+        height: 80vh;
+        background: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e") center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 15px 25px;
+      }
+
+      section {
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      footer {
+        background: black;
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* MOBILE */
       @media (max-width: 768px) {
-  /* Navbar jadi vertikal */
-  nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+        nav {
+          flex-direction: column;
+        }
 
-  nav a {
-    display: block;
-    margin: 5px 0;
-  }
+        .menu-toggle {
+          display: block;
+        }
 
-  .lang-switch {
-    position: static;
-    margin-bottom: 10px;
-  }
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          gap: 10px;
+        }
 
-  /* Hero lebih kecil */
-  .hero {
-    height: 75vh;
-    padding: 20px;
-  }
+        .nav-links.active {
+          display: flex;
+        }
 
-  .hero h1 {
-    font-size: 26px;
-  }
+        .lang-switch {
+          position: static;
+          margin-top: 10px;
+        }
 
-  .hero p {
-    font-size: 14px;
-  }
-
-  /* Grid jadi 1 kolom */
-  .paket,
-  .pilihan-grid,
-  .tentang-box {
-    grid-template-columns: 1fr;
-  }
-
-  /* Kontak lebih lebar */
-  .kontak-box {
-    width: 90%;
-  }
-
-  /* Padding lebih kecil */
-  section {
-    padding: 50px 15px;
-  }
-}
-@media (max-width: 768px) {
-
-  header {
-    padding: 10px 0;
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  nav a {
-    font-size: 15px;
-  }
-
-  .lang-switch {
-    position: static;
-    margin-bottom: 8px;
-  }
-
-  .hero {
-    margin-top: 0;
-  }
-}
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.nav-links {
-  display: flex;
-  gap: 15px;
-}
-
-@media (max-width: 768px) {
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-}
-
+        .hero h1 {
+          font-size: 28px;
+        }
+      }
     </style>
   </head>
+
   <body>
     <header>
       <h2>Dupatravel</h2>
+
+      <div class="lang-switch">
+        <button onclick="setLanguage('id')">ID</button>
+        <button onclick="setLanguage('en')">EN</button>
+      </div>
+
       <nav>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <div class="lang-switch">
-          <button onclick="setLanguage('id')">ID</button>
-          <button onclick="setLanguage('en')">EN</button>
+
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#paket">Paket Tour</a>
+          <a href="#pilihan">Pilihan Tour</a>
+          <a href="#tentang">Tentang Kami</a>
+          <a href="#kontak">Kontak</a>
         </div>
-
-<a href="#home" data-key="nav_home">Home</a>
-<a href="#paket" data-key="nav_paket">Paket Tour</a>
-<a href="#pilihan" data-key="nav_pilihan">Pilihan Tour</a>
-<a href="#tentang" data-key="nav_tentang">Tentang Kami</a>
-<a href="#kontak" data-key="nav_kontak">Kontak</a>
-
       </nav>
     </header>
 
-    <section id="home" class="hero">
-      <div class="hero-content">
-       <h1 data-key="hero_title">Explore Bali with Dupatravel</h1>
-<p data-key="hero_desc">Paket tour pilihan dengan pelayanan nyaman dan terpercaya.</p>
-<a class="btn" href="https://wa.me/62895413595511" data-key="hero_btn">Booking Sekarang</a>
-
-      </div>
-    </section>
+    <div class="hero" id="home">
+      <h1 id="heroText">Explore Bali with Dupatravel</h1>
+    </div>
 
     <section id="paket">
-  <h2 data-key="paket_title">Paket Tour</h2>
-
-  <div class="paket">
-    <div class="card">
-       <img src="Img/batur.webp" alt="Tour Bali 1 Hari" />
-        <div class="card-content">
-      <h3 data-key="paket_1_title">Tour Bali 1 Hari</h3>
-      <p data-key="paket_1_desc">Destinasi populer Bali dalam satu hari.</p>
-      <p><strong data-key="harga">Harga:</strong> Rp 500.000</p>
-      <a class="btn" href="https://wa.me/62895413595511" data-key="pesan">Pesan</a>
-    </div>
-    </div>
-
-    <div class="card">
-      <img src="Img/Tirta-Gangga.jpg" alt="Tour Bali 1 Hari" />
-      <div class="card-content">
-        <h3 data-key="paket_1_title">Tour Bali 1 Hari</h3>
-        <p data-key="paket_1_desc">Destinasi populer Bali dalam satu hari.</p>
-        <p><strong data-key="harga">Harga:</strong> Rp 500.000</p>
-        <a class="btn" href="https://wa.me/62895413595511" data-key="pesan">Pesan</a>
-      </div>
-    </div>
-
-    <div class="card">
-       <img src="Img/sekumpul.webp" alt="Tour Bali 1 Hari" />
-      <div class="card-content">
-      <h3 data-key="paket_custom_title">Tour Custom</h3>
-      <p data-key="paket_custom_desc">Pilih destinasi sesuai keinginan Anda.</p>
-      <p><strong data-key="harga">Harga:</strong> <span data-key="menyesuaikan">Menyesuaikan</span></p>
-      <a class="btn" href="https://wa.me/62895413595511" data-key="pesan">Pesan</a>
-    </div>
-  </div>
-</section>
+      <h2>Paket Tour</h2>
+      <p>Pilih paket terbaik untuk liburan Anda di Bali.</p>
+    </section>
 
     <section id="pilihan">
-      <h2 data-key="pilihan_title">Pilihan Tour</h2>
-
-      <div class="pilihan-grid">
-        <div class="pilihan-card">
-          <img src="Img/haneymoon.jpg" alt="Tour 1 Hari" />
-          <h3>Tour View</h3>
-          <p>Jelajahi destinasi populer Bali dalam satu hari penuh dengan itinerary fleksibel.</p>
-          <a href="https://wa.me/62895413595511?text=Saya%20tertarik%20Tour%201%20Hari" class="btn">Pesan Sekarang</a>
-        </div>
-
-        <div class="pilihan-card">
-          <img src="Img/Sangeh.jpg" alt="Tour 2-3 Hari" />
-          <h3>Tour 2-3 Hari</h3>
-          <p>Detail kami perhatikan, kenyamanan,Keamanan,kepuasan, dan Anda secara prioritas.</p>
-          <a href="https://wa.me/62895413595511?text=Saya%20tertarik%20Tour%202-3%20Hari" class="btn">Pesan Sekarang</a>
-        </div>
-
-        <div class="pilihan-card">
-          <img src="Img/kelingking beach.jpg" alt="Tour Custom" />
-          <h3>Tour Custom</h3>
-          <p>Karena setiap perjalanan punya cerita, biarkan kami yang akan menuliskannya untuk Anda.</p>
-          <a href="https://wa.me/62895413595511?text=Saya%20ingin%20Tour%20Custom" class="btn">Pesan Sekarang</a>
-        </div>
-
-        <div class="pilihan-card">
-          <img src="Img/ubud.jpg" alt="Private Tour" />
-          <h3>Private Tour</h3>
-          <p>Tour privat dengan suasana lebih eksklusif aman dan nyaman serta ketenangan Anda.</p>
-          <a href="https://wa.me/62895413595511?text=Saya%20ingin%20Private%20Tour" class="btn">Pesan Sekarang</a>
-        </div>
-
-        <div class="pilihan-card honeymoon">
-          <img src="Img/tanah-lot.jpg" alt="Honeymoon" />
-          <h3>Trip</h3>
-          <p>Paket romantis untuk momen spesial bersama pasangan.</p>
-          <a href="https://wa.me/62895413595511?text=Paket%20Honeymoon" class="btn">Pesan Sekarang</a>
-        </div>
-      </div>
+      <h2>Pilihan Tour</h2>
+      <p>Berbagai destinasi menarik dan pengalaman tak terlupakan.</p>
     </section>
 
-   <section id="tentang">
-  <h2 data-key="about_title">Tentang Kami</h2>
-  <p data-key="about_desc">
-  </p>
-
-  <div class="tentang-box">
-    <div class="tentang-col">
-      <h3 data-key="about_profile_title">Profil Singkat</h3>
-      <p data-key="about_profile_desc">
-        Dupatravel merupakan penyedia layanan tour yang berfokus pada pengalaman
-        perjalanan yang nyaman, aman, dan berkesan. Kami menghadirkan berbagai
-        pilihan paket wisata dengan perencanaan yang rapi dan pelayanan yang
-        ramah untuk setiap pelanggan.
-      </p>
-    </div>
-
-    <div class="tentang-col">
-      <h3 data-key="about_abstract_title">Abstrak</h3>
-      <p data-key="about_abstract_desc">
-        Dupatravel hadir sebagai solusi perjalanan wisata yang mengutamakan
-        kepuasan pelanggan melalui layanan yang terpercaya, fleksibel, dan
-        berorientasi pada kualitas. Kami berkomitmen memberikan pengalaman
-        perjalanan terbaik dengan pengelolaan tour yang profesional.
-      </p>
-    </div>
-  </div>
-</section>
-
+    <section id="tentang">
+      <h2>Tentang Kami</h2>
+      <p>Kami adalah travel terpercaya yang siap membantu perjalanan Anda.</p>
+    </section>
 
     <section id="kontak">
-      <h2 data-key="kontak_title">Kontak</h2>
-
-      <div class="kontak-wrapper">
-        <div class="kontak-box">
-          <a href="https://wa.me/62895413595511" target="_blank" class="kontak-item"> 📱 WhatsApp </a>
-
-          <a href="https://www.instagram.com/dupatravel_/" target="_blank" class="kontak-item"> 📸 Instagram </a>
-
-          <a href="mailto:dupatravel@gmail.com" class="kontak-item"> ✉️ Email </a>
-        </div>
-      </div>
+      <h2>Kontak</h2>
+      <p>Email: info@dupatravel.com</p>
     </section>
 
-    <footer>
-  <p>&copy; 2026 Dupatravel. All rights reserved.</p>
-</footer>
+    <footer>© 2026 Dupatravel. All rights reserved.</footer>
 
-<script>
-const translations = {
-  id: {
-    nav_home: "Home",
-    nav_paket: "Paket Tour",
-    nav_pilihan: "Pilihan Tour",
-    nav_tentang: "Tentang Kami",
-    nav_kontak: "Kontak",
+    <script>
+      function toggleMenu() {
+        document.querySelector(".nav-links").classList.toggle("active");
+      }
 
-    hero_title: "Explore Bali with Dupatravel",
-    hero_desc: "Paket tour pilihan dengan pelayanan nyaman dan terpercaya.",
-    hero_btn: "Booking Sekarang",
+      function setLanguage(lang) {
+        const heroText = document.getElementById("heroText");
 
-    paket_title: "Paket Tour",
-
-    about_title: "Tentang Kami",
-
-    about_profile_title: "Profil Singkat",
-    about_profile_desc:
-      "Dupatravel merupakan penyedia layanan tour yang berfokus pada pengalaman perjalanan yang nyaman, aman, dan berkesan. Kami menghadirkan berbagai pilihan paket wisata dengan perencanaan yang rapi dan pelayanan yang ramah untuk setiap pelanggan.",
-    about_abstract_title: "Abstrak",
-    about_abstract_desc:
-      "Dupatravel hadir sebagai solusi perjalanan wisata yang mengutamakan kepuasan pelanggan melalui layanan yang terpercaya, fleksibel, dan berorientasi pada kualitas. Kami berkomitmen memberikan pengalaman perjalanan terbaik dengan pengelolaan tour yang profesional."
-  },
-
-  en: {
-    nav_home: "Home",
-    nav_paket: "Tour Packages",
-    nav_pilihan: "Tour Options",
-    nav_tentang: "About Us",
-    nav_kontak: "Contact",
-
-    hero_title: "Explore Bali with Dupatravel",
-    hero_desc: "Selected tour packages with comfortable and trusted service.",
-    hero_btn: "Book Now",
-
-    paket_title: "Tour Packages",
-
-    about_title: "About Us",
-    about_desc: "We are a professional travel service provider.",
-    about_profile_title: "Company Profile",
-    about_profile_desc:
-      "Dupatravel is a tour service provider focused on delivering comfortable, safe, and memorable travel experiences. We offer various tour packages with well-organized planning and friendly service for every customer.",
-    about_abstract_title: "Abstract",
-    about_abstract_desc:
-      "Dupatravel is present as a travel solution that prioritizes customer satisfaction through reliable, flexible, and quality-oriented services. We are committed to providing the best travel experience with professional tour management."
-  }
-};
-
-function setLanguage(lang) {
-  localStorage.setItem("lang", lang);
-  document.querySelectorAll("[data-key]").forEach(el => {
-    const key = el.dataset.key;
-    if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
-  });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const savedLang = localStorage.getItem("lang") || "id";
-  setLanguage(savedLang);
-});
-</script>
-
-
-</script>
-<script>
-function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("active");
-}
-</script>
-</body>
-</html>
-
+        if (lang === "id") {
+          heroText.innerText = "Jelajahi Bali Bersama Dupatravel";
+        } else {
+          heroText.innerText = "Explore Bali with Dupatravel";
+        }
+      }
+    </script>
   </body>
 </html>
