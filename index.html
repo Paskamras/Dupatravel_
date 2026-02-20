@@ -8,6 +8,7 @@
 
     <style>
       
+      
       body {
         margin: 0;
         font-family: "Segoe UI", sans-serif;
@@ -426,6 +427,36 @@
     margin-top: 0;
   }
 }
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
 
     </style>
   </head>
@@ -433,6 +464,7 @@
     <header>
       <h2>Dupatravel</h2>
       <nav>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <div class="lang-switch">
           <button onclick="setLanguage('id')">ID</button>
           <button onclick="setLanguage('en')">EN</button>
@@ -646,7 +678,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 </script>
-
+<script>
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("active");
+}
+</script>
 </body>
 </html>
 
